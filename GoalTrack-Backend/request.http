@@ -1,0 +1,28 @@
+// to get all  goals 
+GET http://localhost:3000/goals
+
+// to post new user # employee,admin,super admin
+POST  http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "userName": "vanaja",
+    "email": "vanaja1682000@gmail.com",
+    "password": "vanaja",
+    "role": "Employee",
+    "GDO":"GDO1"
+}
+
+// adding goal and status 
+POST  http://localhost:3000/goalStatus
+Content-Type: application/json
+
+{
+    "user_id":1,
+    "goal_id": 2,
+    "status": "Inprogress"
+}
+
+// get goal and status by month
+GET http://localhost:3000/goalStatus/2022-05-31 05:30:00+05:30
+

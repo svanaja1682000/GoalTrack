@@ -1,0 +1,27 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "vanaja@123",
+    "database": "goaltracking",
+    "host": "127.0.0.1",
+    "port":5432,
+    "dialect": "postgres"
+    
+  },
+  "test": {
+    "username": "postgres",
+    "password": "vanaja@123",
+    "database": "goaltracking",
+    "host": "127.0.0.1",
+    "port":5432,
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "vanaja@123",
+    "database": "goaltracking",
+    "host": "127.0.0.1",
+    "port":5432,
+    "dialect": "postgres"
+  }
+}
