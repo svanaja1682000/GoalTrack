@@ -1,0 +1,68 @@
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+
+"email":"vanu123@gmail.com",
+"password":"vannu"
+
+}
+
+// to post new user # employee,admin,super admin
+POST  http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "userName": "bindu",
+    "age":20,
+    "skills":"c++",
+    "email": "bindu123@gmail.com",
+    "password": "bindu",
+    "role": "admin",
+    "GDO":"GDO3"
+}
+
+GET http://localhost:3000/users/Employes/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0VtcGxveWVlIjpmYWxzZSwiaXNBZG1pbiI6dHJ1ZSwiaXNTdXBlckFkbWluIjpmYWxzZSwiaWF0IjoxNjU0MDgzNzUxfQ.tnmPLVBortjJnb09pO-A4QC3ZaVwlV2mfu5-o7KZBXE
+
+
+GET http://localhost:3000/users/Admins
+
+GET http://localhost:3000/users/Employes/id
+
+GET http://localhost:3000/users/Admins/id
+
+
+
+// adding goal and status 
+POST  http://localhost:3000/goalStatus
+Content-Type: application/json
+
+{
+    "user_id":6,
+    "goal": "Learn java",
+    "status": "Inprogress",
+    "month":"2022-06-1"
+}
+
+// get goal and status by month
+GET http://localhost:3000/goalStatus/2022-06-1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0VtcGxveWVlIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaXNTdXBlckFkbWluIjpmYWxzZSwiaWF0IjoxNjU0MDcxOTA4fQ.zYsrf7l-fpsx_UmnGbYzeAJCqw0afXWeTI_F-_VBJa8
+
+
+PUT http://localhost:3000/goalStatus/6/2022-06-1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0VtcGxveWVlIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaXNTdXBlckFkbWluIjpmYWxzZSwiaWF0IjoxNjU0MDcxOTA4fQ.zYsrf7l-fpsx_UmnGbYzeAJCqw0afXWeTI_F-_VBJa8
+
+{
+    "goal":"learn datascience"
+}
+
+PUT http://localhost:3000/goalStatus/6/2022-06-1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0VtcGxveWVlIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaXNTdXBlckFkbWluIjpmYWxzZSwiaWF0IjoxNjU0MDcxOTA4fQ.zYsrf7l-fpsx_UmnGbYzeAJCqw0afXWeTI_F-_VBJa8
+
+{
+    "status":"completed"
+}
