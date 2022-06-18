@@ -1,0 +1,119 @@
+//super admin token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0VtcGxveWVlIjpmYWxzZSwiZW1haWwiOiJtYW1tdTEyM0BnbWFpbC5jb20iLCJpZCI6MSwiaXNBZG1pbiI6dHJ1ZSwiaXNTdXBlckFkbWluIjp0cnVlLCJpYXQiOjE2NTU1MTU3NTl9.uzveeTWohp50oJDQhzDFXXbcZ0zSs6d28SaG155XMoQ"
+//Admin token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0VtcGxveWVlIjp0cnVlLCJlbWFpbCI6InZhbnUxMjNAZ21haWwuY29tIiwiaWQiOjIsImlzQWRtaW4iOnRydWUsImlzU3VwZXJBZG1pbiI6ZmFsc2UsImlhdCI6MTY1NTUxNTY5M30.ymZhAfG6QLo9pu-SJGIspq1dD8-KAvOcVo5IWiSijrs
+//Employee token:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0VtcGxveWVlIjp0cnVlLCJlbWFpbCI6InRlanUxMjNAZ21haWwuY29tIiwiaWQiOjksImlzQWRtaW4iOmZhbHNlLCJpc1N1cGVyQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTU1MTU2MTV9.ClJEqFzK5W8jB3t2pqhx7rHo9yhAw8UgMxCJzUxNBW4
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+
+"email":"mammu123@gmail.com",
+"password":"mammu"
+
+}
+
+//to get userType
+GET http://localhost:3000/users/usertype
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0VtcGxveWVlIjp0cnVlLCJlbWFpbCI6InZhbnUxMjNAZ21haWwuY29tIiwiaWQiOjIsImlzQWRtaW4iOnRydWUsImlzU3VwZXJBZG1pbiI6ZmFsc2UsImlhdCI6MTY1NTUxNTY5M30.ymZhAfG6QLo9pu-SJGIspq1dD8-KAvOcVo5IWiSijrs
+
+
+// signup employee,admin,super admin
+
+
+POST  http://localhost:3000/signup
+Content-Type: application/json
+
+{
+    "username":"vannuuu",
+    "age":"12",
+    "skills":"c",
+    "email":"lmn@gmail.com",
+    "password":"Bin4@1123",
+    "roleid":1,
+    "gdoid":2
+}
+
+
+
+// employee can add new goal and status for particular month
+POST  http://localhost:3000/usergoals/addgoalStatus
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0VtcGxveWVlIjp0cnVlLCJlbWFpbCI6InRlanUxMjNAZ21haWwuY29tIiwiaWQiOjksImlzQWRtaW4iOmZhbHNlLCJpc1N1cGVyQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTU1MTU2MTV9.ClJEqFzK5W8jB3t2pqhx7rHo9yhAw8UgMxCJzUxNBW4
+
+{
+    "goal": "Learn ml",
+    "status": "Inprogress",
+    "month":"2022-06-02"
+}
+
+
+
+//employee can fetch all details
+GET http://localhost:3000/users/data
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0VtcGxveWVlIjp0cnVlLCJlbWFpbCI6InRlanUxMjNAZ21haWwuY29tIiwiaWQiOjksImlzQWRtaW4iOmZhbHNlLCJpc1N1cGVyQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTU1MTU2MTV9.ClJEqFzK5W8jB3t2pqhx7rHo9yhAw8UgMxCJzUxNBW4
+
+
+//to fetch all records of perticular user
+
+GET http://localhost:3000/usergoals
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0VtcGxveWVlIjp0cnVlLCJlbWFpbCI6InRlanUxMjNAZ21haWwuY29tIiwiaWQiOjksImlzQWRtaW4iOmZhbHNlLCJpc1N1cGVyQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTU1MTU2MTV9.ClJEqFzK5W8jB3t2pqhx7rHo9yhAw8UgMxCJzUxNBW4
+
+
+//Employee  can access particualr month goal and status 
+
+GET http://localhost:3000/usergoals/06
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0VtcGxveWVlIjp0cnVlLCJlbWFpbCI6InRlanUxMjNAZ21haWwuY29tIiwiaWQiOjksImlzQWRtaW4iOmZhbHNlLCJpc1N1cGVyQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTU1MTU2MTV9.ClJEqFzK5W8jB3t2pqhx7rHo9yhAw8UgMxCJzUxNBW4
+
+//Employee can edit goal 
+
+PUT http://localhost:3000/usergoals/editgoal?month=2022-06-01&goal=learn sql
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0VtcGxveWVlIjp0cnVlLCJlbWFpbCI6InRlanUxMjNAZ21haWwuY29tIiwiaWQiOjksImlzQWRtaW4iOmZhbHNlLCJpc1N1cGVyQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTU1MTU2MTV9.ClJEqFzK5W8jB3t2pqhx7rHo9yhAw8UgMxCJzUxNBW4
+
+{
+    "goal":"learn datascience"
+}
+
+
+// Employee can edit status of particular month
+
+PUT http://localhost:3000/usergoals/editstatus?month=2022-06-01&status=in progress
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0VtcGxveWVlIjp0cnVlLCJlbWFpbCI6InRlanUxMjNAZ21haWwuY29tIiwiaWQiOjksImlzQWRtaW4iOmZhbHNlLCJpc1N1cGVyQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTU1MTU2MTV9.ClJEqFzK5W8jB3t2pqhx7rHo9yhAw8UgMxCJzUxNBW4
+
+{
+    "status":"completed"
+}
+
+// to delete data
+DELETE http://localhost:3000/usergoals/deletedata?id=7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0VtcGxveWVlIjp0cnVlLCJlbWFpbCI6InRlanUxMjNAZ21haWwuY29tIiwiaWQiOjksImlzQWRtaW4iOmZhbHNlLCJpc1N1cGVyQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTU1MTU2MTV9.ClJEqFzK5W8jB3t2pqhx7rHo9yhAw8UgMxCJzUxNBW4
+
+
+// Admin can fetech all employees under his/admin guidance 
+GET http://localhost:3000/users/employees
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0VtcGxveWVlIjp0cnVlLCJlbWFpbCI6InZhbnUxMjNAZ21haWwuY29tIiwiaWQiOjIsImlzQWRtaW4iOnRydWUsImlzU3VwZXJBZG1pbiI6ZmFsc2UsImlhdCI6MTY1NTUxNTY5M30.ymZhAfG6QLo9pu-SJGIspq1dD8-KAvOcVo5IWiSijrs
+
+
+
+// admin and superAdmin can see employee goals for particular month
+GET http://localhost:3000/empgoals/bindu123@gmail.com/06 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0VtcGxveWVlIjpmYWxzZSwiZW1haWwiOiJtYW1tdTEyM0BnbWFpbC5jb20iLCJpZCI6MSwiaXNBZG1pbiI6dHJ1ZSwiaXNTdXBlckFkbWluIjp0cnVlLCJpYXQiOjE2NTU0NTk3OTR9.iqYlFh9tQHYVOFGQFSUwi3py9JwwnEZlYGZ-PnsEhG8
+
+
+// superAdmin operations
+
+GET http://localhost:3000/users/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0VtcGxveWVlIjpmYWxzZSwiZW1haWwiOiJtYW1tdTEyM0BnbWFpbC5jb20iLCJpZCI6MSwiaXNBZG1pbiI6dHJ1ZSwiaXNTdXBlckFkbWluIjp0cnVlLCJpYXQiOjE2NTU0NTk3OTR9.iqYlFh9tQHYVOFGQFSUwi3py9JwwnEZlYGZ-PnsEhG8
+
+
+GET http://localhost:3000/users/admindetails/vanu123@gmail.com
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0VtcGxveWVlIjpmYWxzZSwiZW1haWwiOiJtYW1tdTEyM0BnbWFpbC5jb20iLCJpZCI6MSwiaXNBZG1pbiI6dHJ1ZSwiaXNTdXBlckFkbWluIjp0cnVlLCJpYXQiOjE2NTU0NTk3OTR9.iqYlFh9tQHYVOFGQFSUwi3py9JwwnEZlYGZ-PnsEhG8
+
+//super admin to fetch employees under perticular admin
+GET http://localhost:3000/users/empunderadmin/vanu123@gmail.com
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0VtcGxveWVlIjpmYWxzZSwiZW1haWwiOiJtYW1tdTEyM0BnbWFpbC5jb20iLCJpZCI6MSwiaXNBZG1pbiI6dHJ1ZSwiaXNTdXBlckFkbWluIjp0cnVlLCJpYXQiOjE2NTU0NTk3OTR9.iqYlFh9tQHYVOFGQFSUwi3py9JwwnEZlYGZ-PnsEhG8
+
+
+
+
+
